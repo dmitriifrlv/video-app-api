@@ -14,11 +14,9 @@ const database = {
     }
   ]
 }
-// app.use(express.json())
 
-// app.use(express.static('public'))
 const jwtsecret = "secret"
-// app.post('/login', (req, res))
+
 app.post('/signin', (req, res) => {
   if (req.body.login === database.users[0].login && req.body.password === database.users[0].password) {
     res.json(
