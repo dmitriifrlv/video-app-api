@@ -17,6 +17,8 @@ const database = {
 
 const jwtsecret = "secret"
 
+app.get('/', (req, res) => {res.send('success')})
+
 app.post('/signin', (req, res) => {
   if (req.body.login === database.users[0].login && req.body.password === database.users[0].password) {
     res.json(
@@ -30,5 +32,5 @@ app.post('/signin', (req, res) => {
 })
 
 app.listen(process.env.PORT || 3000, ()=>{
-  console.log('so far so good')
+  console.log(`app is running on port ${process.env.PORT}`)
 })
